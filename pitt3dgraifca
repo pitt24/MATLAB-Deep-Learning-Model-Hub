@@ -1,0 +1,37 @@
+% Definir los puntos P y Q
+P = [2, 1, 0];
+Q = [3, 4, 2];
+
+% Rango de valores para el parámetro t
+t = linspace(0, 1, 100);
+
+% Ecuaciones paramétricas de la línea
+x = P(1) + t*(Q(1) - P(1));
+y = P(2) + t*(Q(2) - P(2));
+z = P(3) + t*(Q(3) - P(3));
+
+% Graficar la línea
+figure;
+plot3(x, y, z, 'b-', 'LineWidth', 2);
+hold on;
+
+% Marcar los puntos P y Q
+scatter3(P(1), P(2), P(3), 80, 'r', 'filled');
+scatter3(Q(1), Q(2), Q(3), 80, 'g', 'filled');
+
+% Etiquetar los puntos
+text(P(1), P(2), P(3), 'P', 'FontSize', 14);
+text(Q(1), Q(2), Q(3), 'Q', 'FontSize', 14);
+
+% Etiquetar los ejes
+xlabel('x');
+ylabel('y');
+zlabel('z');
+
+% Título
+title('Línea que pasa por los puntos P y Q');
+
+% Ajustar la vista
+grid on;
+axis equal;
+view(3);
